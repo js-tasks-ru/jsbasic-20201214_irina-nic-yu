@@ -3,6 +3,9 @@
  * @param {string} str base
  * @returns {boolean}
  */
+
 function checkSpam(str) {
-  // ваш код...
+  let lowerCaseStr = str.toLowerCase();
+
+  return (lowerCaseStr.includes('1xet') || lowerCaseStr.includes('xxx'));
 }
