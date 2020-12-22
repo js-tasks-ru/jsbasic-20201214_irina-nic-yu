@@ -4,7 +4,7 @@
  * @returns {string}
  */
 function ucFirst(str) {
-  if (str.length == 0) {
+  if (!str) {
     return str;
   }
 
