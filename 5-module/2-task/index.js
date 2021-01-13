@@ -5,9 +5,9 @@ function toggleText() {
   toggleButton.addEventListener('click', () => {
 
     if (!textContainer.hasAttribute('hidden')) {
-      textContainer.setAttribute('hidden', null);
+      textContainer.hidden = true;
     } else {
-      textContainer.removeAttribute('hidden');
+      textContainer.hidden = false;
     }
 
   });

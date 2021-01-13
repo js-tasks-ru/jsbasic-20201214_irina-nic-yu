@@ -3,31 +3,42 @@ function initCarousel() {
     carouselSlides = document.querySelectorAll('.carousel__slide'),
     carouselArrow = document.querySelectorAll('.carousel__arrow'),
     rightArrow = carouselArrow[0],
-    leftArrow = carouselArrow[1];
-
-  const slideWidth = carouselSlides[0].offsetWidth;
+    leftArrow = carouselArrow[1],
+    slideWidth = carouselSlides[0].offsetWidth;
 
   let actualSlidePosition = 0;
   leftArrow.style.display = 'none';
 
-  rightArrow.addEventListener('click', () => {
-    leftArrow.style.display = '';
-    actualSlidePosition++;
+  function showElement(element) {
+    element.style.display = '';
+  }
+
+  function hideElement(element) {
+    element.style.display = 'none';
+  }
+
+  function moveSlides() {
     slidesContainer.style.transform = `translateX(-${slideWidth*actualSlidePosition}px)`;
+  }
+
+  rightArrow.addEventListener('click', () => {
+    showElement(leftArrow);
+    actualSlidePosition++;
+    moveSlides();
 
     if (actualSlidePosition >= (carouselSlides.length - 1)) {
-      rightArrow.style.display = 'none';
+      hideElement(rightArrow);
     }
 
   });
 
   leftArrow.addEventListener('click', () => {
-    rightArrow.style.display = '';
+    showElement(rightArrow);
     actualSlidePosition--;
-    slidesContainer.style.transform = `translateX(-${slideWidth*actualSlidePosition}px)`;
+    moveSlides();
 
     if (actualSlidePosition <= 0) {
-      leftArrow.style.display = 'none';
+      hideElement(leftArrow);
     }
 
   });

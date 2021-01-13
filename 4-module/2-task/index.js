@@ -5,8 +5,9 @@
 function makeDiagonalRed(table) {
   let cell;
 
-  for (let i = 0; i < table.rows.length; i++) {
-    cell = table.rows[i].cells[i];
+  [...table.rows].forEach((row, index) => {
+    cell = row.cells[index];
     cell.style.backgroundColor = 'red';
-  }
+  });
+
 }

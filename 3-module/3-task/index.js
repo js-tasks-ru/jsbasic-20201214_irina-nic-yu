@@ -4,10 +4,9 @@
  */
 function camelize(str) {
   let strByWords = str.split('-');
-  let [firstWord] = strByWords;
-  let strByWordsCamelize = strByWords.map(item => {
+  let strByWordsCamelize = strByWords.map((item, index) => {
 
-    if (item === firstWord) {
+    if (index === 0) {
       return item;
     }
 

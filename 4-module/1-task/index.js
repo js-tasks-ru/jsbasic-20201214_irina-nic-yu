@@ -6,8 +6,6 @@
 function makeFriendsList(friends) {
   let friendsList = document.createElement('ul');
 
-  document.body.append(friendsList);
-
   friends.forEach(({firstName: name, lastName: surname}) => {
     let friend = document.createElement('li');
     friend.innerHTML = `${name} ${surname}`;
@@ -16,6 +14,6 @@ function makeFriendsList(friends) {
 
   });
 
-  return document.body.lastElementChild;
+  return friendsList;
 }
 
