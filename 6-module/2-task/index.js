@@ -39,13 +39,9 @@ export default class ProductCard {
     });
 
     this._container = createElement(template);
-    this.addEventListeners();
+    this._container.addEventListener('click', this._onCardClick);
   }
   
-  addEventListeners() {
-    this._container.addEventListener('click', this._onCardClick);
-    this._container.addEventListener('product-add', console.log);
-  }
 
   _onCardClick = (event) => {
     let target = event.target;
