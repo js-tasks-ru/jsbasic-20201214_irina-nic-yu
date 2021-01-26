@@ -52,7 +52,7 @@ export default class Carousel {
   _onAddClick = (event) => {
     let target = event.target;
 
-    if (!target.closest(`[class="carousel__button"]`)) {
+    if (!target.closest(`.carousel__button`)) {
       return;
     }
     

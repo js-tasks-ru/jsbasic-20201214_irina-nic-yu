@@ -35,7 +35,7 @@ export default class UserTable {
     this._users = rows;
     this._headings = ['Имя', 'Возраст', 'Зарплата', 'Город', ''];
     this._container = null;
-    this._hideRow = this._hideRow.bind(this);
+    this._onClick = this._onClick.bind(this);
     this._render();
   }
 
@@ -70,7 +70,7 @@ export default class UserTable {
     return rows.map(this._rowTemplate).join('');
   }
 
-  _hideRow(event) {
+  _onClick(event) {
     let target = event.target;
     let row = target.closest('tr');
 
@@ -87,7 +87,7 @@ export default class UserTable {
     });
 
     this._container = createElement(template);
-    this._container.addEventListener('click', this._hideRow);
+    this._container.addEventListener('click', this._onClick);
   }
 
 }

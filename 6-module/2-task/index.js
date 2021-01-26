@@ -1,12 +1,12 @@
 import createElement from '../../assets/lib/create-element.js';
 
 export default class ProductCard {
-  constructor(product) {
-    this._name = product.name;
-    this._price = product.price;
-    this._category = product.category;
-    this._image = product.image;
-    this._id = product.id;
+  constructor({name, price, category, image, id}) {
+    this._name = name;
+    this._price = price;
+    this._category = category;
+    this._image = image;
+    this._id = id;
     this._container = null;
  
     this._render();
