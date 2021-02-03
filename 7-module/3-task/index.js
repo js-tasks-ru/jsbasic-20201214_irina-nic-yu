@@ -1,6 +1,9 @@
 import createElement from '../../assets/lib/create-element.js';
 export default class StepSlider {
-  constructor({ steps, value = 2 }) {
+  constructor({ steps, value = null }) {
+    if (value == null) {
+      value = Math.floor(steps / 2);
+    }
     this._stepsCount = steps;
     this._value = value;
     this._container = null;
